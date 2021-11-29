@@ -5,7 +5,7 @@ https://www.notion.so/Implantando-com-eksctl-c57caf70428344f8bf0bdd8c10309ec6
 ## Passos
 
 1. Antes de iniciar a instalação é necessário:
-- Ter as chaves de acesso ao CLI
+- Ter as chaves de acesso ao CLI da AWS
 - Permissões abaixo:
     - 
     
@@ -21,7 +21,7 @@ https://www.notion.so/Implantando-com-eksctl-c57caf70428344f8bf0bdd8c10309ec6
     ```
     
 
-1. Instalar seu cluster, modelo de configuração:
+1. Instalar seu cluster, modelo de configuração pode ser encontrado neste repositório:
     1. cluster.yaml
     2. mais modelos em: [eksctl/examples at main · weaveworks/eksctl (github.com)](https://github.com/weaveworks/eksctl/tree/main/examples)
     
@@ -51,7 +51,7 @@ https://www.notion.so/Implantando-com-eksctl-c57caf70428344f8bf0bdd8c10309ec6
             # supported special values: "*" and "all"
     ```
     
-2. Caso ainda não tenha registrado seu **dns** ou **subdomínio**, recomendo seguir o passo para fazer a criação do **hostedzone** via cli logo abaixo:
+2. Caso ainda não tenha registrado seu **dns** ou **subdomínio**, recomendo seguir o passo para fazer a criação do **hostedzone** via cli conforme abaixo:
     1. criar um subdomain:
         1. Detalhe importante aqui, para seu **subdomain funcionar,** você precisa adicionar os NS da criação referente ao comando abaixo no seu  hosted principal, nesse caso, seria adicionar uma entrada do tipo NS em [**site.com.br](http://site.com.br) .** Os valores para NS do subdomain serão listados após sua criação ou estarão listados route53.
         
@@ -185,12 +185,12 @@ https://www.notion.so/Implantando-com-eksctl-c57caf70428344f8bf0bdd8c10309ec6
             - --policy=upsert-only # would prevent ExternalDNS from deleting any records, omit to enable full synchronization
             - --aws-zone-type=public # only look at public hosted zones (valid values are public, private or no value for both)
             - --registry=txt
-            - --txt-owner-id=ID_HOSTEDZONE_IN_USE #Recupera com o comando no passo 3.a ou no Route53 diretamente
+            - --txt-owner-id=ID_HOSTEDZONE_IN_USE #Recupere com o comando no passo 3.a ou no Route53 diretamente
           securityContext:
             fsGroup: 65534 # For ExternalDNS to be able to read Kubernetes and AWS token files
     ```
     
-7. Testando seu Cluster
+7. Testando seu Cluster, vamos criar um deployment
     1. deploy-nginx-service.yaml
         
         ```bash
@@ -234,7 +234,7 @@ https://www.notion.so/Implantando-com-eksctl-c57caf70428344f8bf0bdd8c10309ec6
                   name: http
         ```
         
-        b. Deve ser criado seu service e deploy, logo após, uns 5 min, deve ser criado seu subdomain, que você escolheu no seu service e estará online para você.
+        b. Deve ser criado seu service e deploy. Após uns 5 min, deve ser criado seu subdomain, que você escolheu no seu service e estará online para você.
         
 8. Configurando o lets-encrypt para gerar seus certificados HTTPs. (fazendo)
 9. Configurando a criação de seus certificados HTTPS diretamente na AWS. (fazendo)
