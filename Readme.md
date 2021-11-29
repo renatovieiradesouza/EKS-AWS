@@ -5,9 +5,10 @@ https://www.notion.so/Implantando-com-eksctl-c57caf70428344f8bf0bdd8c10309ec6
 ## Passos
 
 1. Antes de iniciar a instalação é necessário:
-- Ter as chaves de acesso ao CLI da AWS
+- Ter as chaves de acesso ao CLI da AWS e configure as mesmas como variáveis de ambiente ou da maneira que achar melhor, siga esses passos caso tenha dificuldades: [Configurar a AWS CLI](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-chap-configure.html)
 - Permissões abaixo:
     - 
+
     
     ![Permissoes](https://raw.githubusercontent.com/renatovieiradesouza/EKS-AWS/main/img/permissoes.png)
     
