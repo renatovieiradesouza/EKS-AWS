@@ -11,8 +11,6 @@
 - Ter as chaves de acesso ao CLI da AWS e configure as mesmas como variáveis de ambiente ou da maneira que achar melhor, siga esses passos caso tenha dificuldades: [Configurar a AWS CLI](https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-chap-configure.html)
 - Permissões abaixo:
     - 
-
-    
     ![Permissoes](https://raw.githubusercontent.com/renatovieiradesouza/EKS-AWS/main/img/permissoes.png)
     
 - Instalar o eksctl
@@ -238,7 +236,8 @@
                   name: http
         ```
         
-        b. Deve ser criado seu service e deploy. Após uns 5 min, deve ser criado seu subdomain, que você escolheu no seu service e estará online para você.
+        b. Deve ser criado seu service e deploy. Após uns 5 min, deve ser criado seu subdomain, que você escolheu no seu service e estará online para você.  
+        c. Para ter acesso a NGINX que realizamos o deploy, libere seu IP no security-group criado para seu cluster.
         
 8. Configurando o lets-encrypt para gerar seus certificados HTTPs. (fazendo)
 9. Configurando a criação de seus certificados HTTPS diretamente na AWS. (fazendo)
