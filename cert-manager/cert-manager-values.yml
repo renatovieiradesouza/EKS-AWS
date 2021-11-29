@@ -1,6 +1,6 @@
 serviceAccount:
   annotations:
-    eks.amazonas.com/role-arn: arn:aws:iam::681206901347:role/eksctl-claroclustertest-cluster-ServiceRole-QTHHFNSOZ81D
+    eks.amazonas.com/role-arn: YOUR_ROLE_SERVICE
 
 installCRDs: true #Custom Resource Definitions
 

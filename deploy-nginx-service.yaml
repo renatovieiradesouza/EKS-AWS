@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: nginx
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: nginx.eks.renatodesouza.com.br
+    external-dns.alpha.kubernetes.io/hostname: nginx.subdomain.seusite.com.br
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
   type: LoadBalancer

@@ -7,7 +7,7 @@ metadata:
   annotations:
     # Substitute your account ID and IAM service role name below.
     #Procure pela sua role no IAM, terá o nome do seu cluster
-    eks.amazonaws.com/role-arn: arn:aws:iam::681206901347:role/eksctl-meuclustereks-cluster-ServiceRole-BXB9C937104Z
+    eks.amazonaws.com/role-arn: YOUR_ROLE_SERVICE
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -54,7 +54,7 @@ spec:
       # If you're using kiam or kube2iam, specify the following annotation.
       # Otherwise, you may safely omit it.
       annotations:
-        iam.amazonaws.com/role: arn:aws:iam::681206901347:role/eksctl-meuclustereks-cluster-ServiceRole-BXB9C937104Z
+        iam.amazonaws.com/role: YOUR_ROLE_SERVICE
     spec:
       serviceAccountName: external-dns
       containers:
@@ -63,11 +63,11 @@ spec:
         args:
         - --source=service
         - --source=ingress
-        - --domain-filter=eks.renatodesouza.com.br # will make ExternalDNS see only the hosted zones matching provided domain, omit to process all available hosted zones
+        - --domain-filter=subdomain.seusite.com.br # will make ExternalDNS see only the hosted zones matching provided domain, omit to process all available hosted zones
         - --provider=aws
         - --policy=upsert-only # would prevent ExternalDNS from deleting any records, omit to enable full synchronization
         - --aws-zone-type=public # only look at public hosted zones (valid values are public, private or no value for both)
         - --registry=txt
-        - --txt-owner-id=Z02959941U4OKKHL8KU0I
+        - --txt-owner-id=YOUR_HOSTED_ZONE
       securityContext:
         fsGroup: 65534 # For ExternalDNS to be able to read Kubernetes and AWS token files

@@ -4,7 +4,7 @@ metadata:
   name: letsencrypt
 spec:
   acme:
-    email: renatovieiradesouza1@gmail.com
+    email: YOUR_EMAIL
     privateKeySecretRef:
       name: letsencrypt
     server: https://acme-v02.api.letsencrypt.org/directory
@@ -12,4 +12,4 @@ spec:
       - dns01:
           route53:
             region: eu-central-1
-            hostedZoneID: Z05818183VZRTREGCODYP
+            hostedZoneID: HOSTEDZONE_YOUR_SUBDOMAIN_CREATED
