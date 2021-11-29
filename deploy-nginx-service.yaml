@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mockfront
+  name: nginx
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: mockfront.claro.renatodesouza.com.br
+    external-dns.alpha.kubernetes.io/hostname: nginx.eks.renatodesouza.com.br
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
   type: LoadBalancer
@@ -12,27 +12,27 @@ spec:
     name: http
     targetPort: 80
   selector:
-    app: mockfront
+    app: nginx
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: mockfront
-  name: mockfront
+    app: nginx
+  name: nginx
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: mockfront
+      app: nginx
   template:
     metadata:
       labels:
-        app: mockfront
+        app: nginx
     spec:
       containers:
       - image: nginx
-        name: mockfront
+        name: nginx
         ports:
         - containerPort: 80
           name: http

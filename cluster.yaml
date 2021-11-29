@@ -2,7 +2,7 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: testandomeuclustereks
+  name: meuclustereks
   region: eu-central-1
 
 nodeGroups:
