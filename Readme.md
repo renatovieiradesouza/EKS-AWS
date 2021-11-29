@@ -240,4 +240,6 @@
         c. Para ter acesso a NGINX que realizamos o deploy, libere seu IP no security-group criado para seu cluster.
         
 8. Configurando o lets-encrypt para gerar seus certificados HTTPs. (fazendo)
-9. Configurando a criação de seus certificados HTTPS diretamente na AWS. (fazendo)
+9. Configurando a criação de seus certificados HTTPS diretamente na AWS. (fazendo)  
+10. Deploy do Gitlab usando Helm.  
+11. Deploy de uma solução de Mock sem Helm.  
