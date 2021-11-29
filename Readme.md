@@ -1,5 +1,8 @@
-# Notion Doc  
-https://www.notion.so/Implantando-com-eksctl-c57caf70428344f8bf0bdd8c10309ec6  
+# Instalando e configurando um cluster EKS da AWS  
+
+## Links  
+* https://github.com/kubernetes-sigs/external-dns/blob/master/docs/tutorials/aws.md   
+* https://www.notion.so/Implantando-com-eksctl-c57caf70428344f8bf0bdd8c10309ec6  
 
 
 ## Passos
