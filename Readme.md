@@ -9,7 +9,7 @@ https://www.notion.so/Implantando-com-eksctl-c57caf70428344f8bf0bdd8c10309ec6
 - Permissões abaixo:
     - 
     
-    ![Permissoes](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6703ce07-ed68-472a-8825-37409c711658/Untitled.png)
+    ![Permissoes](https://raw.githubusercontent.com/renatovieiradesouza/EKS-AWS/main/img/permissoes.png)
     
 - Instalar o eksctl
 - Instalar e configurar o AWS CLI
@@ -59,13 +59,14 @@ https://www.notion.so/Implantando-com-eksctl-c57caf70428344f8bf0bdd8c10309ec6
         aws route53 create-hosted-zone --name "subdomain.site.com.br." --caller-reference "external-dns-test-$(date +%s)"
         ```
         
-        ![DNS](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dafbb0b4-f092-4465-a2e4-9e9067e7b877/Untitled.png)
+        ![DNS](https://raw.githubusercontent.com/renatovieiradesouza/EKS-AWS/main/img/dns.png)
         
 3. Criar IAM Policy com o json abaixo:
     1. Ir em IAM, Policy, Create policy:
         1. 
         
-        ![Policy](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/da527b3d-a95d-446b-8107-6ea065945335/Untitled.png)
+        ![Policy](https://raw.githubusercontent.com/renatovieiradesouza/EKS-AWS/main/img/policy-1.png)
+        ![Policy](https://raw.githubusercontent.com/renatovieiradesouza/EKS-AWS/main/img/policy-2.png)
 
         ```bash
         {
